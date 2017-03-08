@@ -21,3 +21,9 @@
     border: 1px dashed black;
     position: absolute;
 }
+
+#add-drag-text {
+    height: 50px;
+    font-size: 16px;
+    padding: 0 10px;
+}
