@@ -6,3 +6,8 @@
   padding: 10px;
   overflow: hidden;
 }
+
+.sentence-wrapper.sentence-wrapper--selected {
+  background: lightgreen;
+  cursor: pointer;
+}
