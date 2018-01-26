@@ -1,0 +1,5 @@
+.sentence-wrapper,
+.sentence-wrapper.sentence-wrapper--selected {
+  background: lightgreen;
+  cursor: pointer;
+}
