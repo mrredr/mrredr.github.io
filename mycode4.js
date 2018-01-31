@@ -186,17 +186,222 @@ if (false) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return SET_VALIDATED_SENTENCES; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SELECT_SENTENCE; });
-/* harmony export (immutable) */ __webpack_exports__["c"] = reducer;
-/* harmony export (immutable) */ __webpack_exports__["d"] = initizlizeSentences;
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GET_SENTENCES_ERROR; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return SET_VALIDATED_SENTENCES; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return SELECT_SENTENCE; });
+/* harmony export (immutable) */ __webpack_exports__["e"] = reducer;
+/* harmony export (immutable) */ __webpack_exports__["f"] = initializeSentences;
+/* harmony export (immutable) */ __webpack_exports__["d"] = addFoundSentence;
 /* unused harmony export getSentences */
-/* harmony export (immutable) */ __webpack_exports__["g"] = selectSentence;
-/* harmony export (immutable) */ __webpack_exports__["e"] = selectNextSentence;
-/* harmony export (immutable) */ __webpack_exports__["f"] = selectPrevSentence;
-var MODULE_NAME='sentence';var GET_SENTENCES=MODULE_NAME+'/GET_SENTENCES';var GET_SENTENCES_SUCCESS=MODULE_NAME+'/GET_SENTENCES_SUCCESS';var SET_VALIDATED_SENTENCES=MODULE_NAME+'/SET_VALIDATED_SENTENCES';var SELECT_SENTENCE=MODULE_NAME+'/SELECT_SENTENCE';var defaultState={loading:false,sentencesData:{},validSentences:[],rootSelector:'',selectedSentenceId:null,error:{}};function reducer(){var state=arguments.length>0&&arguments[0]!==undefined?arguments[0]:defaultState;var action=arguments.length>1&&arguments[1]!==undefined?arguments[1]:{};switch(action.type){case GET_SENTENCES:return Object.assign({},state,{loading:true});case GET_SENTENCES_SUCCESS:return Object.assign({},state,{loading:false,sentencesData:action.data,rootSelector:action.data.root});case SET_VALIDATED_SENTENCES:return Object.assign({},state,{validSentences:action.data});case SELECT_SENTENCE:return Object.assign({},state,{selectedSentenceId:action.data});default:return state;}}function initizlizeSentences(){return function(dispatch,getState){dispatch(getSentences()).then(function(result){dispatch({type:SET_VALIDATED_SENTENCES,data:getState().sentences.sentencesData.sentences});});};}function sentencesConverter(input){//  TODO:: some validator to be sure that structure still the same
-return input;}function getSentences(){var SENTENCES=[{"xPath":"NG-TRANSCLUDE:1,DIV:1|1","guid":"a137af70-e4b4-401d-a1a7-b031262e0089","sentence":"Vad är geografi?"},{"xPath":"NG-TRANSCLUDE:1,DIV:2,H1:1|1","guid":"a94e995c-7089-4559-aa86-e8a8463cbd72","sentence":"Världens ämne"},{"xPath":"NG-TRANSCLUDE:1,DIV:4,DIV:2,H2:1,P:1|1","guid":"a2610275-9944-47f6-bbb1-5bf6989c2ffe","sentence":"Geografi ger förståelse"},{"xPath":"NG-TRANSCLUDE:1,DIV:4,CONTENT:1,DIV:1,SPAN:1,NE-MTM:1,DIV:2,CONTENT:1,DIV:1,SPAN:1,NE-PARAGRAPH:1,DIV:1,P:1,P:1,EM:1|1","guid":"9b708c02-826a-4034-8ae9-2a823693b5b0","sentence":"Augusti 2014 och det regnar i sydvästra Skåne."},{"xPath":"NG-TRANSCLUDE:1,DIV:4,CONTENT:1,DIV:1,SPAN:1,NE-MTM:1,DIV:2,CONTENT:1,DIV:1,SPAN:1,NE-PARAGRAPH:1,DIV:1,P:1,P:1,EM:1|2","guid":"bbf41d95-0dcc-44fa-b613-2903c79f093c","sentence":"Det regnar mycket."},{"xPath":"NG-TRANSCLUDE:1,DIV:4,CONTENT:1,DIV:1,SPAN:1,NE-MTM:1,DIV:2,CONTENT:1,DIV:1,SPAN:1,NE-PARAGRAPH:1,DIV:1,P:1,P:1,EM:1|3","guid":"8ae5f169-895c-45b4-a7a9-ec04873ac253","sentence":"På mindre än ett dygn får Malmö 100 millimeter regn, och det är ungefär en sjättedel av den totala nederbörden under ett år."},{"xPath":"NG-TRANSCLUDE:1,DIV:4,CONTENT:1,DIV:1,SPAN:1,NE-MTM:1,DIV:2,CONTENT:1,DIV:1,SPAN:1,NE-PARAGRAPH:1,DIV:1,P:1,P:1,EM:1|4","guid":"015ec4d7-b572-47e8-b0f7-dc54d05dab69","sentence":"Varken Malmö eller de omgivande kommunerna är&nbsp;förberedda på skyfallet, och på många ställen finns det så mycket vatten att det inte går ta sig fram."},{"xPath":"NG-TRANSCLUDE:1,DIV:4,CONTENT:1,DIV:1,SPAN:1,NE-MTM:1,DIV:2,CONTENT:1,DIV:1,SPAN:1,NE-PARAGRAPH:1,DIV:1,P:1,P:1,EM:1|5","guid":"b3ce2b72-f2a5-4601-a0bb-78501852ccaf","sentence":"Flera bilar kör till och med fast i vatten och det blir långa&nbsp;bilköer eftersom vägarna är dränkta av vatten."},{"xPath":"NG-TRANSCLUDE:1,DIV:4,CONTENT:1,DIV:2,SPAN:1,NE-IMAGE:1,DIV:1,DIV:2,SPAN:1|1","guid":"fad4628b-c043-450c-b205-a926650c15bc","sentence":"NILSSON DANIEL /AFTONBLADET/IBL"},{"xPath":"NG-TRANSCLUDE:1,DIV:4,CONTENT:1,DIV:2,SPAN:1,NE-IMAGE:1,DIV:1,DIV:3,P:1|1","guid":"d41cdb6f-907c-49f9-8448-ece7eeec30bb","sentence":"Översvämning i Malmö i augusti 2014."},{"xPath":"NG-TRANSCLUDE:1,DIV:4,CONTENT:1,DIV:2,SPAN:1,NE-IMAGE:1,DIV:1,DIV:3,P:1|2","guid":"0869b495-6b67-4104-9748-379f62c128b9","sentence":"Flera vägar&nbsp;var översvämmade."},{"xPath":"NG-TRANSCLUDE:1,DIV:4,CONTENT:1,DIV:2,SPAN:1,NE-IMAGE:1,DIV:1,DIV:3,P:1|3","guid":"ea242915-280f-4905-8872-fd3ff1df0a82","sentence":"Här en bil som fastnat i vattenmassorna."},{"xPath":"NG-TRANSCLUDE:1,DIV:4,CONTENT:1,DIV:3,SPAN:1,NE-PARAGRAPH:1,DIV:1,P:1,P:1|1","guid":"ada64ec8-842c-4299-b647-d1b73feb4ac9","sentence":"Det är inte bara sydvästra Skåne som drabbas av översvämningar utan det är något som händer över hela jordklotet. Översvämningarna kan ha naturliga orsaker men kan också bero på människans aktiviteter."},{"xPath":"NG-TRANSCLUDE:1,DIV:4,CONTENT:1,DIV:3,SPAN:1,NE-PARAGRAPH:1,DIV:1,P:1,P:1|2","guid":"a521b746-5203-44b4-ae5d-4e67feffde47","sentence":"Med goda kunskaper i geografi kan du bättre förstå varför översvämningar och andra naturfenomen eller naturkatastrofer inträffar samt vilka konsekvenser det får för människans miljö."},{"xPath":"NG-TRANSCLUDE:1,DIV:4,CONTENT:1,DIV:4,SPAN:1,NE-HEADER:1,DIV:2,DIV:1,DIV:2,H3:1,P:1|1","guid":"a33ba1f2-fc97-4209-9c74-71c560e2b52f","sentence":"Ett brett ämne"},{"xPath":"NG-TRANSCLUDE:1,DIV:4,CONTENT:1,DIV:5,SPAN:1,NE-PARAGRAPH:1,DIV:1,P:1,P:1|1","guid":"b1fe58e8-49e1-4fc0-a37d-39dc21e9a228","sentence":"Geografi är ett brett ämne som har många beröringspunkter med andra ämnen."},{"xPath":"NG-TRANSCLUDE:1,DIV:4,CONTENT:1,DIV:5,SPAN:1,NE-PARAGRAPH:1,DIV:1,P:1,P:1|2","guid":"031e4558-3e82-4de2-9a92-36ee13c7031a","sentence":"Kunskap om naturen liksom förståelse för samhället och historiska processer är viktigt i geografi."},{"xPath":"NG-TRANSCLUDE:1,DIV:4,CONTENT:1,DIV:5,SPAN:1,NE-PARAGRAPH:1,DIV:1,P:1,P:1|3","guid":"674cedfb-c50a-4eb0-8371-69a7e525d8ee","sentence":"Trots likheter med andra ämnen finns det ändå något som är speciellt med geografi och det är platsen."},{"xPath":"NG-TRANSCLUDE:1,DIV:4,CONTENT:1,DIV:5,SPAN:1,NE-PARAGRAPH:1,DIV:1,P:1,P:2|1","guid":"a47e7f31-21c2-41a9-aa1c-6b2ec1441a13","sentence":"Geografi är alltså ett ämne som handlar om platser."},{"xPath":"NG-TRANSCLUDE:1,DIV:4,CONTENT:1,DIV:5,SPAN:1,NE-PARAGRAPH:1,DIV:1,P:1,P:2|2","guid":"f8713d2b-ad6c-4234-97b7-39357ccbbe3a","sentence":"Inte bara om namn på olika platser utan också om varför en plats “ligger där den ligger”."},{"xPath":"NG-TRANSCLUDE:1,DIV:4,CONTENT:1,DIV:5,SPAN:1,NE-PARAGRAPH:1,DIV:1,P:1,P:2|3","guid":"960413e5-30b8-42b4-9979-04ed8bd14740","sentence":"Geografi handlar till exempel om att förklara varför orter finns där de finns,&nbsp;men också om varför naturgeografiska fenomen som berg och vattendrag finns på olika ställen i världen."},{"xPath":"NG-TRANSCLUDE:1,DIV:4,CONTENT:1,DIV:5,SPAN:1,NE-PARAGRAPH:1,DIV:1,P:1,P:2|4","guid":"72511567-2bf2-47c4-ac62-b379a79089a1","sentence":"Man kan faktiskt säga att så fort man kan visa något på en karta är det geografi."},{"xPath":"NG-TRANSCLUDE:1,DIV:4,CONTENT:1,DIV:6,SPAN:1,NE-IMAGE-CONTAINER:1,DIV:1,DIV:2,NE-IMAGE:1,DIV:1,DIV:2,SPAN:1|1","guid":"daca9798-7877-4f0f-8c85-302edaca5397","sentence":"SHUTTERSTOCK"},{"xPath":"NG-TRANSCLUDE:1,DIV:4,CONTENT:1,DIV:6,SPAN:1,NE-IMAGE-CONTAINER:1,DIV:1,DIV:2,NE-IMAGE:1,DIV:1,DIV:3,P:1|1","guid":"7beacf0d-b1db-497b-bff8-eb0f7d709083","sentence":"Raserade hus i Nepals huvudstad Katmandu efter en jordbävning 2015."},{"xPath":"NG-TRANSCLUDE:1,DIV:4,CONTENT:1,DIV:6,SPAN:1,NE-IMAGE-CONTAINER:1,DIV:1,DIV:3,NE-IMAGE:1,DIV:1,DIV:2,SPAN:1|1","guid":"4cf5e533-76be-41a5-9ceb-fc9c1b4b5336","sentence":"INGOLFUR BJARGMUNDSSON/GETTY IMAGES"},{"xPath":"NG-TRANSCLUDE:1,DIV:4,CONTENT:1,DIV:6,SPAN:1,NE-IMAGE-CONTAINER:1,DIV:1,DIV:3,NE-IMAGE:1,DIV:1,DIV:3,P:1|1","guid":"c2072b18-ff93-4e40-bea6-319a08843354","sentence":"Den isländska vulkanen Eyjafjallajökulls stora utbrott 2010."},{"xPath":"NG-TRANSCLUDE:1,DIV:4,CONTENT:1,DIV:7,SPAN:1,NE-HEADER:1,DIV:2,DIV:1,DIV:2,H3:1,P:1|1","guid":"c3d989a3-863a-4a02-8f5a-18fab71062eb","sentence":"Från jordytan till atmosfären"},{"xPath":"NG-TRANSCLUDE:1,DIV:4,CONTENT:1,DIV:8,SPAN:1,NE-PARAGRAPH:1,DIV:1,P:1,P:1|1","guid":"90e5150e-4948-42ac-bcff-9fd4400f75f3","sentence":"Ordet geografi betyder beskrivning av jordytan."},{"xPath":"NG-TRANSCLUDE:1,DIV:4,CONTENT:1,DIV:8,SPAN:1,NE-PARAGRAPH:1,DIV:1,P:1,P:1|2","guid":"b0ac421f-c531-4ef6-8e4a-40f8912d9adb","sentence":"Geografi beskriver allt som sker på jordytan och upp i atmosfären men också vad människan gör på jorden."},{"xPath":"NG-TRANSCLUDE:1,DIV:4,CONTENT:1,DIV:8,SPAN:1,NE-PARAGRAPH:1,DIV:1,P:1,P:1|3","guid":"9790b779-d85b-42b7-a4e8-5b7dfceb2e68","sentence":"Geografi är med andra ord ett ämne som tar upp samspelet mellan natur, människa och samhälle."},{"xPath":"NG-TRANSCLUDE:1,DIV:4,CONTENT:1,DIV:8,SPAN:1,NE-PARAGRAPH:1,DIV:1,P:1,P:1|4","guid":"cb14e992-9c7b-47a1-b2e4-b36fcadec16f","sentence":"Det kräver exempelvis kunskaper om hur jordytan har skapats, hur den ser ut och varför den förändras, men också kunskaper om hur lufthavet (atmosfären) ser ut och varför detta lufthav förändras."},{"xPath":"NG-TRANSCLUDE:1,DIV:4,CONTENT:1,DIV:8,SPAN:1,NE-PARAGRAPH:1,DIV:1,P:1,P:2|1","guid":"28fb91b9-b0ed-4d7b-bccf-b8aca2290a4d","sentence":"Det är också viktigt att känna till hur olika platser och samhällen ser ut och vad som har gjort att de ser ut som de gör."},{"xPath":"NG-TRANSCLUDE:1,DIV:4,CONTENT:1,DIV:8,SPAN:1,NE-PARAGRAPH:1,DIV:1,P:1,P:2|2","guid":"9796f969-c484-4f82-b7eb-340692255ae0","sentence":"Det handlar också om hur människan bidrar till utvecklingen."},{"xPath":"NG-TRANSCLUDE:1,DIV:4,CONTENT:1,DIV:8,SPAN:1,NE-PARAGRAPH:1,DIV:1,P:1,P:2|3","guid":"e12333db-59e8-4228-8dc7-ea3c5a3b75b7","sentence":"Geografi kan därför handla om till exempel befolkning, jordbävningar, klimat, städer, levnadsvillkor, naturresurser, energi och transporter."},{"xPath":"NG-TRANSCLUDE:1,DIV:4,CONTENT:1,DIV:9,SPAN:1,NE-PARAGRAPH:1,DIV:1,P:1,P:1|1","guid":"b5a568f1-0b56-4d55-bea4-7445675d7bfc","sentence":"Ämnet geografi kan delas i två grenar: naturgeografi och kulturgeografi (eller samhällsgeografi som det också kallas)."},{"xPath":"NG-TRANSCLUDE:1,DIV:4,CONTENT:1,DIV:9,SPAN:1,NE-PARAGRAPH:1,DIV:1,P:1,P:1|2","guid":"57cc62d1-c9ef-4bad-ba69-4a3020fdda2f","sentence":"Inom naturgeografin sysslar man med geografiska fenomen som kommit till utan människans påverkan, och inom kulturgeografi med geografiska fenomen som människan skapat."},{"xPath":"NG-TRANSCLUDE:1,DIV:4,CONTENT:1,DIV:10,SPAN:1,NE-ENCYCLOPEDIA-ARTICLE:1,DIV:1,READER-BUTTON:1,DIV:2,DIV:2,P:1|1","guid":"277d042c-3293-4aac-86be-530d9fa16c67","sentence":"Läs mer i NE om geografi"},{"xPath":"NG-TRANSCLUDE:1,DIV:5,DIV:2,H2:1,P:1|1","guid":"a35634ba-f3be-44b6-9b5f-81decd2fb7ab","sentence":"Geografiska verktyg och metoder"},{"xPath":"NG-TRANSCLUDE:1,DIV:5,CONTENT:1,DIV:1,SPAN:1,NE-HEADER:1,DIV:2,DIV:1,DIV:2,H3:1,P:1|1","guid":"304a1185-ac8d-4667-bfc6-34bb53cea2b1","sentence":"Kartan och GIS"},{"xPath":"NG-TRANSCLUDE:1,DIV:5,CONTENT:1,DIV:2,SPAN:1,NE-PARAGRAPH:1,DIV:1,P:1,P:1|1","guid":"11c17b52-e3bc-45ff-a444-ce877801fcd0","sentence":"Kartan är geografens viktigaste redskap."},{"xPath":"NG-TRANSCLUDE:1,DIV:5,CONTENT:1,DIV:2,SPAN:1,NE-PARAGRAPH:1,DIV:1,P:1,P:1|2","guid":"6acf9fa7-246d-4517-a48f-306cf318321f","sentence":"Med hjälp av GIS (geografiskt informationssystem) kan man ta fram information och göra analyser som hjälper en att se samband mellan olika fenomen."},{"xPath":"NG-TRANSCLUDE:1,DIV:5,CONTENT:1,DIV:2,SPAN:1,NE-PARAGRAPH:1,DIV:1,P:1,P:1|3","guid":"9c06bb6b-4b61-4838-8b6a-0892897487e8","sentence":"Kartor och GIS&nbsp;behandlas mer ingående i kursdelen Kartografi och digitala hjälpmedel."},{"xPath":"NG-TRANSCLUDE:1,DIV:5,CONTENT:1,DIV:3,SPAN:1,NE-IMAGE:1,DIV:1,DIV:2,SPAN:1|1","guid":"1303e081-d956-4b4a-88db-1b492a41638e","sentence":"ZHUKOVVVLAD/SHUTTERSTOCK"},{"xPath":"NG-TRANSCLUDE:1,DIV:5,CONTENT:1,DIV:3,SPAN:1,NE-IMAGE:1,DIV:1,DIV:3,P:1|1","guid":"2282d764-bb4e-43c2-9980-d0064d5b481b","sentence":"Magnetkompassen är en av många vetenskapliga uppfinningar som bidragit till att människan kunnat resa långväga och lära sig&nbsp;mer om sin värld."},{"xPath":"NG-TRANSCLUDE:1,DIV:5,CONTENT:1,DIV:4,SPAN:1,NE-HEADER:1,DIV:2,DIV:1,DIV:2,H3:1,P:1|1","guid":"b5e865d8-f961-43fd-a0c0-c0cb852a10b5","sentence":"Fältstudier"},{"xPath":"NG-TRANSCLUDE:1,DIV:5,CONTENT:1,DIV:5,SPAN:1,NE-PARAGRAPH:1,DIV:1,P:1,P:1|1","guid":"f309a46d-cc03-4b73-b665-f283fec5e5bf","sentence":"Viktiga metoder inom geografi är fältstudier och exkursioner."},{"xPath":"NG-TRANSCLUDE:1,DIV:5,CONTENT:1,DIV:5,SPAN:1,NE-PARAGRAPH:1,DIV:1,P:1,P:1|2","guid":"18b5e8eb-cc48-4551-a2fc-d17e49396fec","sentence":"Fältstudier handlar om att undersöka något på plats och exkursioner om att besöka platser."},{"xPath":"NG-TRANSCLUDE:1,DIV:5,CONTENT:1,DIV:5,SPAN:1,NE-PARAGRAPH:1,DIV:1,P:1,P:1|3","guid":"5e6295d5-860d-4d1c-bded-1c8178842072","sentence":"Vid en fältstudie kan man till exempel besöka och undersöka platser i verkligheten som man tidigare läst om."},{"xPath":"NG-TRANSCLUDE:1,DIV:5,CONTENT:1,DIV:5,SPAN:1,NE-PARAGRAPH:1,DIV:1,P:1,P:1|4","guid":"ae54e890-7658-4f9a-940d-cab1657069f6","sentence":"Man kan förstås också göra tvärtom, det vill säga besöka platsen först och sedan läsa om den."},{"xPath":"NG-TRANSCLUDE:1,DIV:5,CONTENT:1,DIV:6,SPAN:1,NE-IMAGE:1,DIV:1,DIV:2,SPAN:1|1","guid":"b041543e-3eb0-42d5-a32e-59f28d06c481","sentence":"HERO IMAGES/GETTY IMAGES"},{"xPath":"NG-TRANSCLUDE:1,DIV:5,CONTENT:1,DIV:6,SPAN:1,NE-IMAGE:1,DIV:1,DIV:3,P:1|1","guid":"67e572f0-ebca-4afb-88c9-50052753ff89","sentence":"Fältstudier."},{"xPath":"NG-TRANSCLUDE:1,DIV:5,CONTENT:1,DIV:7,SPAN:1,NE-TEACHER-CONTENT:1,DIV:1,READER-BUTTON:1,DIV:2,DIV:2,P:1|1","guid":"0b7ecb0e-c089-433d-a6a1-5a6c8625e80c","sentence":"Fältstudier"}];var ROOT='#root';return function(dispatch){dispatch({type:GET_SENTENCES});return Promise.resolve().then(function(){// TODO:: Util function to highlight
-dispatch({type:GET_SENTENCES_SUCCESS,data:{root:ROOT,sentences:SENTENCES}});});return fetch('http://localhost:3000/publisher').then(function(res){return res.json();}).then(function(data){dispatch({type:GET_SENTENCES_SUCCESS,data:{root:ROOT,sentences:data}});});};}function selectSentence(id){return function(dispatch){dispatch({type:SELECT_SENTENCE,data:id});};}function selectNextSentence(){return function(dispatch,getState){var selectedSentenceId=getState().sentences.selectedSentenceId;var validSentences=getState().sentences.validSentences;var selectedIndex=validSentences.findIndex(function(sentence){return sentence.guid===selectedSentenceId;});var nextIndex=selectedIndex===validSentences.length-1?selectedIndex:selectedIndex+1;dispatch(selectSentence(nextIndex));};}function selectPrevSentence(){return function(dispatch,getState){var selectedSentenceId=getState().sentences.selectedSentenceId;var validSentences=getState().sentences.validSentences;var selectedIndex=validSentences.findIndex(function(sentence){return sentence.guid===selectedSentenceId;});var nextIndex=selectedIndex===0?selectedIndex:selectedIndex-1;dispatch(selectSentence(nextIndex));};}
+/* unused harmony export selectSentence */
+/* harmony export (immutable) */ __webpack_exports__["h"] = selectFirstSentence;
+/* harmony export (immutable) */ __webpack_exports__["i"] = selectNextSentence;
+/* harmony export (immutable) */ __webpack_exports__["j"] = selectPrevSentence;
+/* harmony export (immutable) */ __webpack_exports__["g"] = saveSelectedSound;
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+var MODULE_NAME = 'sentence';
+var SERVER_HOST = 'https://ilt-api-narrator.fastdev.se';
+
+var GET_SENTENCES = MODULE_NAME + '/GET_SENTENCES';
+var GET_SENTENCES_SUCCESS = MODULE_NAME + '/GET_SENTENCES_SUCCESS';
+var GET_SENTENCES_ERROR = MODULE_NAME + '/GET_SENTENCES_ERROR';
+var SET_VALIDATED_SENTENCES = MODULE_NAME + '/SET_VALIDATED_SENTENCES';
+var SELECT_SENTENCE = MODULE_NAME + '/SELECT_SENTENCE';
+var ADD_FOUND_SENTENCE = MODULE_NAME + '/ADD_FOUND_SENTENCE';
+var SET_SOUND_FOR_SELECTED_SENTENCE_SUCCESS = MODULE_NAME + '/SET_SOUND_FOR_SELECTED_SENTENCE_SUCCESS';
+var SET_SOUND_FOR_SELECTED_SENTENCE_ERROR = MODULE_NAME + '/SET_SOUND_FOR_SELECTED_SENTENCE_ERROR';
+
+var defaultState = {
+  sentencesData: {},
+  validSentences: [],
+  foundSentences: [],
+  rootSelector: '',
+  selectedSentenceId: null,
+  previouslySelectedSentenceId: null,
+  isLoading: false,
+  error: {}
+};
+
+function reducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultState;
+  var action = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+
+  switch (action.type) {
+    case GET_SENTENCES:
+      return Object.assign({}, state, {
+        isLoading: true
+      });
+
+    case GET_SENTENCES_SUCCESS:
+      return Object.assign({}, state, {
+        sentencesData: action.data,
+        rootSelector: action.data.root,
+        isLoading: false,
+        error: {}
+      });
+
+    case GET_SENTENCES_ERROR:
+      return Object.assign({}, state, {
+        isLoading: false,
+        error: {
+          type: GET_SENTENCES_ERROR
+        }
+      });
+
+    case SET_VALIDATED_SENTENCES:
+      return Object.assign({}, state, {
+        validSentences: action.data
+      });
+
+    case SELECT_SENTENCE:
+      return Object.assign({}, state, {
+        previouslySelectedSentenceId: state.selectedSentenceId,
+        selectedSentenceId: action.data
+      });
+
+    case ADD_FOUND_SENTENCE:
+      return Object.assign({}, state, {
+        foundSentences: [action.data].concat(_toConsumableArray(state.foundSentences))
+      });
+
+    case SET_SOUND_FOR_SELECTED_SENTENCE_SUCCESS:
+      return Object.assign({}, state, {
+        validSentences: state.validSentences.map(function (item) {
+          return item.guid === action.data.sentenceId ? Object.assign({}, item, {
+            sound: action.data.soundId
+          }) : item;
+        })
+      });
+
+    case SET_SOUND_FOR_SELECTED_SENTENCE_ERROR:
+      return Object.assign({}, state, {
+        error: {
+          type: SET_SOUND_FOR_SELECTED_SENTENCE_ERROR,
+          data: action.data
+        }
+      });
+
+    default:
+      return state;
+  }
+}
+
+function initializeSentences() {
+  return function (dispatch) {
+    dispatch(getSentences());
+  };
+}
+
+function validateSentences() {
+  return function (dispatch, getState) {
+    //  TODO: Validate
+    dispatch({
+      type: SET_VALIDATED_SENTENCES,
+      data: getState().sentences.sentencesData.sentences
+    });
+  };
+}
+
+function addFoundSentence(id) {
+  return function (dispatch) {
+    dispatch({
+      type: ADD_FOUND_SENTENCE,
+      data: id
+    });
+  };
+}
+
+function getSentences() {
+
+  return function (dispatch) {
+    dispatch({ type: GET_SENTENCES });
+
+    return fetch(SERVER_HOST + '/api/articles/external?url=' + window.location.href).then(function (res) {
+      return res.ok ? res.json() : function () {
+        throw new Error('');
+      }();
+    }).then(function (data) {
+      dispatch({
+        type: GET_SENTENCES_SUCCESS,
+        data: {
+          root: data.selector,
+          sentences: data.sentences
+        }
+      });
+      dispatch(validateSentences());
+    }).catch(function (e) {
+      return dispatch({ type: GET_SENTENCES_ERROR });
+    });
+  };
+}
+
+function selectSentence(id) {
+  return function (dispatch) {
+    dispatch({
+      type: SELECT_SENTENCE,
+      data: id
+    });
+  };
+}
+
+function selectFirstSentence() {
+  return function (dispatch, getState) {
+    var firstElementId = getState().sentences.foundSentences[0].guid;
+    dispatch({
+      type: SELECT_SENTENCE,
+      data: firstElementId
+    });
+  };
+}
+
+function selectNextSentence() {
+  return function (dispatch, getState) {
+    var selectedSentenceId = getState().sentences.selectedSentenceId;
+    var foundSentences = getState().sentences.foundSentences;
+    var selectedIndex = foundSentences.findIndex(function (sentence) {
+      return sentence.guid === selectedSentenceId;
+    });
+    var nextIndex = selectedIndex === foundSentences.length - 1 ? selectedIndex : selectedIndex + 1;
+    dispatch(selectSentence(foundSentences[nextIndex].guid));
+  };
+}
+
+function selectPrevSentence() {
+  return function (dispatch, getState) {
+    var selectedSentenceId = getState().sentences.selectedSentenceId;
+    var foundSentences = getState().sentences.foundSentences;
+    var selectedIndex = foundSentences.findIndex(function (sentence) {
+      return sentence.guid === selectedSentenceId;
+    });
+    var nextIndex = selectedIndex === 0 ? selectedIndex : selectedIndex - 1;
+    dispatch(selectSentence(foundSentences[nextIndex].guid));
+  };
+}
+
+function saveSelectedSound(blob, sentenceId) {
+  return function (dispatch, getState) {
+    var file = new File([blob], sentenceId, { type: 'audio/wav' });
+    var formData = new FormData();
+    formData.append('soundFile', file);
+
+    return fetch(SERVER_HOST + '/api/sentences/' + sentenceId + '/sound', {
+      method: 'POST',
+      body: formData
+    }).then(function (res) {
+      return res.ok ? res.json() : dispatch({ type: SET_SOUND_FOR_SELECTED_SENTENCE_ERROR, data: sentenceId });
+    }).then(function (res) {
+      dispatch({
+        type: SET_SOUND_FOR_SELECTED_SENTENCE_SUCCESS,
+        data: {
+          soundId: res.uid,
+          sentenceId: sentenceId
+        }
+      });
+    });
+  };
+}
 
 /***/ }),
 /* 5 */
@@ -2468,8 +2673,48 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__index_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__index_css__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_app__ = __webpack_require__(70);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__modules_sentences__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_sentences__ = __webpack_require__(76);
-function lastAction(){var state=arguments.length>0&&arguments[0]!==undefined?arguments[0]:null;var action=arguments[1];return action;}var reducer=Object(__WEBPACK_IMPORTED_MODULE_3_redux__["c" /* combineReducers */])({sentences:__WEBPACK_IMPORTED_MODULE_8__modules_sentences__["c" /* default */],lastAction:lastAction});var store=Object(__WEBPACK_IMPORTED_MODULE_3_redux__["e" /* createStore */])(reducer,Object(__WEBPACK_IMPORTED_MODULE_3_redux__["d" /* compose */])(Object(__WEBPACK_IMPORTED_MODULE_3_redux__["a" /* applyMiddleware */])(__WEBPACK_IMPORTED_MODULE_4_redux_thunk___default.a),window.__REDUX_DEVTOOLS_EXTENSION__&&window.__REDUX_DEVTOOLS_EXTENSION__()/* Developing needs */));var sentencesComponent=new __WEBPACK_IMPORTED_MODULE_9__components_sentences__["a" /* default */](store);__WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div',null,__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_redux__["a" /* Provider */],{store:store},__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7__components_app__["a" /* default */],null))),document.getElementById('app'));
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_sentences__ = __webpack_require__(77);
+
+
+
+
+
+
+
+
+
+
+
+
+
+var APPLICATION_NAME = 'dtmn-application';
+
+function lastAction() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+  var action = arguments[1];
+
+  return action;
+}
+
+var reducer = Object(__WEBPACK_IMPORTED_MODULE_3_redux__["c" /* combineReducers */])({
+  sentences: __WEBPACK_IMPORTED_MODULE_8__modules_sentences__["e" /* default */],
+  lastAction: lastAction
+});
+
+var store = Object(__WEBPACK_IMPORTED_MODULE_3_redux__["e" /* createStore */])(reducer, Object(__WEBPACK_IMPORTED_MODULE_3_redux__["d" /* compose */])(Object(__WEBPACK_IMPORTED_MODULE_3_redux__["a" /* applyMiddleware */])(__WEBPACK_IMPORTED_MODULE_4_redux_thunk___default.a), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() /* Developing needs */
+));
+
+var sentencesComponent = new __WEBPACK_IMPORTED_MODULE_9__components_sentences__["a" /* default */](store);
+
+var appElement = document.createElement('div');
+appElement.setAttribute('id', APPLICATION_NAME);
+document.querySelector('body').prepend(appElement);
+
+__WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+  __WEBPACK_IMPORTED_MODULE_2_react_redux__["a" /* Provider */],
+  { store: store },
+  __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7__components_app__["a" /* default */], null)
+), document.getElementById(APPLICATION_NAME));
 
 /***/ }),
 /* 28 */
@@ -4592,14 +4837,91 @@ exports['default'] = thunk;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_redux__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_redux__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__playerRecorder__ = __webpack_require__(71);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__loading__ = __webpack_require__(74);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__loading__ = __webpack_require__(75);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__modules_sentences__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__index_css__ = __webpack_require__(75);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__index_css__ = __webpack_require__(76);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__index_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__index_css__);
-var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}var App=function(_Component){_inherits(App,_Component);function App(){_classCallCheck(this,App);return _possibleConstructorReturn(this,(App.__proto__||Object.getPrototypeOf(App)).apply(this,arguments));}_createClass(App,[{key:'componentDidMount',// constructor(props) {
-//   super(props);
-// }
-value:function componentDidMount(){var initizlizeSentences=this.props.initizlizeSentences;initizlizeSentences();}},{key:'render',value:function render(){var sentencesData=this.props.sentencesData;return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div',{className:'App'},sentencesData.sentences?__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__playerRecorder__["a" /* default */],null):__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__loading__["a" /* Loading */],null));}}]);return App;}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_1_react_redux__["b" /* connect */])(function(state){return{sentencesData:state.sentences.sentencesData};},function(dispatch){return{initizlizeSentences:Object(__WEBPACK_IMPORTED_MODULE_2_redux__["b" /* bindActionCreators */])(__WEBPACK_IMPORTED_MODULE_5__modules_sentences__["d" /* initizlizeSentences */],dispatch)};})(App));
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+
+
+
+
+
+
+var App = function (_Component) {
+  _inherits(App, _Component);
+
+  function App(props) {
+    _classCallCheck(this, App);
+
+    var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
+
+    _this.initizlize = _this.initizlize.bind(_this);
+    return _this;
+  }
+
+  _createClass(App, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.initizlize();
+    }
+  }, {
+    key: 'initizlize',
+    value: function initizlize() {
+      var initializeSentences = this.props.initializeSentences;
+
+
+      initializeSentences();
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          foundSentences = _props.foundSentences,
+          error = _props.error,
+          isLoading = _props.isLoading;
+
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'div',
+        { className: 'app' },
+        error && error.type === __WEBPACK_IMPORTED_MODULE_5__modules_sentences__["a" /* GET_SENTENCES_ERROR */] ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          null,
+          'This article hasn\'t parsed'
+        ) : isLoading && foundSentences.length === 0 ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__loading__["a" /* Loading */], null) : foundSentences.length > 0 ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__playerRecorder__["a" /* default */], null) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'div',
+          null,
+          'There are no found sentences'
+        )
+      );
+    }
+  }]);
+
+  return App;
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
+
+/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_1_react_redux__["b" /* connect */])(function (state) {
+  return {
+    isLoading: state.sentences.isLoading,
+    foundSentences: state.sentences.foundSentences,
+    error: state.sentences.error
+  };
+}, function (dispatch) {
+  return {
+    initializeSentences: Object(__WEBPACK_IMPORTED_MODULE_2_redux__["b" /* bindActionCreators */])(__WEBPACK_IMPORTED_MODULE_5__modules_sentences__["f" /* initializeSentences */], dispatch)
+  };
+})(App));
 
 /***/ }),
 /* 71 */
@@ -4612,15 +4934,173 @@ value:function componentDidMount(){var initizlizeSentences=this.props.initizlize
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_redux__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_msr__ = __webpack_require__(72);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_msr___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_msr__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__index_css__ = __webpack_require__(73);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__index_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__index_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__modules_sentences__ = __webpack_require__(4);
-var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}var PlayerRecorder=function(_Component){_inherits(PlayerRecorder,_Component);function PlayerRecorder(props){_classCallCheck(this,PlayerRecorder);var _this=_possibleConstructorReturn(this,(PlayerRecorder.__proto__||Object.getPrototypeOf(PlayerRecorder)).call(this,props));_this.state={isRecording:false};_this.onRecordHandler=_this.onRecordHandler.bind(_this);_this.onRecordStop=_this.onRecordStop.bind(_this);_this.onSave=_this.onSave.bind(_this);_this.SENTENCES=[{id:'ilt1',audio:null},{id:'ilt2',audio:null},{id:'ilt3',audio:null},{id:'ilt4',audio:null},{id:'ilt5',audio:null}];_this.CONTENT='body';_this.FRAGMENT_LENGTH=200*1000;return _this;}_createClass(PlayerRecorder,[{key:'onRecordHandler',value:function onRecordHandler(blob){navigator.getUserMedia({audio:true},onMediaSuccess.bind(this),onMediaError.bind(this));function onMediaSuccess(stream){this.mediaRecorder=new __WEBPACK_IMPORTED_MODULE_3_msr___default.a(stream);this.mediaRecorder.audioChannels=1;this.mediaRecorder.mimeType='audio/wav';// audio/webm or audio/ogg or audio/wav
-this.mediaRecorder.ondataavailable=function(blob){// this.audio.src = URL.createObjectURL(blob);
-console.log('saving to server');};this.mediaRecorder.start(this.FRAGMENT_LENGTH);this.setState({isRecording:true});}function onMediaError(e){console.error('media error',e);}}},{key:'onRecordStop',value:function onRecordStop(){this.mediaRecorder.stop();this.setState({isRecording:false});}},{key:'onSave',value:function onSave(){this.mediaRecorder.save();}// onServerSave() {
-//
-// }
-},{key:'render',value:function render(){var _this2=this;var isRecording=this.state.isRecording;var _props=this.props,selectNextSentence=_props.selectNextSentence,selectPrevSentence=_props.selectPrevSentence,selectedElementIndex=_props.selectedElementIndex;return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div',{className:'player-recorder'},selectedElementIndex!==null?__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div',null,__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div',{className:'player-recorder--action fa fa-play',onClick:function onClick(){return isRecording?_this2.onRecordStop():_this2.onRecordHandler();}},isRecording?'Stop':'Rec'),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div',{className:'fa fa-backward',onClick:function onClick(){return selectPrevSentence();}}),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div',{className:'fa fa-forward',onClick:function onClick(){return selectNextSentence();}}),__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div',{className:'player-recorder--audio-controll'},__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div',null,__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('button',{type:'button',onClick:this.onSave},' Save ')))):__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div',null,'There are no sentences'));}}]);return PlayerRecorder;}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_1_react_redux__["b" /* connect */])(function(state){return{selectedSentenceId:state.sentences.selectedSentenceId};},function(dispatch){return{selectNextSentence:Object(__WEBPACK_IMPORTED_MODULE_2_redux__["b" /* bindActionCreators */])(__WEBPACK_IMPORTED_MODULE_5__modules_sentences__["e" /* selectNextSentence */],dispatch),selectPrevSentence:Object(__WEBPACK_IMPORTED_MODULE_2_redux__["b" /* bindActionCreators */])(__WEBPACK_IMPORTED_MODULE_5__modules_sentences__["f" /* selectPrevSentence */],dispatch)};})(PlayerRecorder));
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_classnames__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_classnames___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_classnames__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__index_css__ = __webpack_require__(74);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__index_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__index_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__modules_sentences__ = __webpack_require__(4);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+
+
+
+
+
+var PlayerRecorder = function (_Component) {
+    _inherits(PlayerRecorder, _Component);
+
+    function PlayerRecorder(props) {
+        _classCallCheck(this, PlayerRecorder);
+
+        var _this = _possibleConstructorReturn(this, (PlayerRecorder.__proto__ || Object.getPrototypeOf(PlayerRecorder)).call(this, props));
+
+        _this.state = {
+            isRecording: false,
+            isLoading: false
+        };
+        _this.onRecordStart = _this.onRecordStart.bind(_this);
+        _this.onRecordStop = _this.onRecordStop.bind(_this);
+        _this.onRecordSave = _this.onRecordSave.bind(_this);
+
+        _this.FRAGMENT_LENGTH = 200 * 1000;
+        _this.blobs = [];
+        _this.blob = null;
+        return _this;
+    }
+
+    _createClass(PlayerRecorder, [{
+        key: 'onRecordStart',
+        value: function onRecordStart(blob) {
+            navigator.getUserMedia({ audio: true }, onMediaSuccess.bind(this), onMediaError.bind(this));
+
+            function onMediaSuccess(stream) {
+                var _this2 = this;
+
+                this.mediaRecorder = new __WEBPACK_IMPORTED_MODULE_3_msr___default.a(stream);
+                this.mediaRecorder.audioChannels = 1;
+                this.mediaRecorder.mimeType = 'audio/wav'; // audio/webm or audio/ogg or audio/wav
+                this.mediaRecorder.ondataavailable = function (blob) {
+                    _this2.blobs.push(blob);
+                };
+                this.mediaRecorder.start(this.FRAGMENT_LENGTH);
+                this.setState({
+                    isRecording: true
+                });
+            }
+
+            function onMediaError(e) {
+                console.error('media error', e);
+            }
+        }
+    }, {
+        key: 'onRecordStop',
+        value: function onRecordStop() {
+            this.mediaRecorder.stop();
+            this.blob = new Blob(this.blobs, { 'type': 'audio/wav' });
+            this.blobs = [];
+            this.setState({
+                isRecording: false
+            });
+            this.audio.src = URL.createObjectURL(this.blob);
+            this.onRecordSave();
+        }
+    }, {
+        key: 'onRecordSave',
+        value: function onRecordSave() {
+            var _this3 = this;
+
+            var _props = this.props,
+                selectedSentenceId = _props.selectedSentenceId,
+                saveSelectedSound = _props.saveSelectedSound;
+
+
+            this.setState({
+                isLoading: true
+            });
+
+            saveSelectedSound(this.blob, selectedSentenceId).then(function () {
+                _this3.setState({
+                    isLoading: false
+                });
+            });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var _this4 = this;
+
+            var _state = this.state,
+                isRecording = _state.isRecording,
+                isLoading = _state.isLoading;
+            var _props2 = this.props,
+                selectNextSentence = _props2.selectNextSentence,
+                selectPrevSentence = _props2.selectPrevSentence,
+                selectedSentenceId = _props2.selectedSentenceId,
+                validSentences = _props2.validSentences;
+
+
+            var selectedSentence = validSentences.find(function (s) {
+                return s.guid === selectedSentenceId;
+            });
+
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'div',
+                { className: 'player-recorder' },
+                selectedSentenceId !== null ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    null,
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: __WEBPACK_IMPORTED_MODULE_4_classnames___default()('fa fa-backward player-recorder__button', { 'player-recorder__button--disabled': validSentences[0].guid === selectedSentenceId }), onClick: function onClick() {
+                            return selectPrevSentence();
+                        } }),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: __WEBPACK_IMPORTED_MODULE_4_classnames___default()('fa fa-forward player-recorder__button', { 'player-recorder__button--disabled': validSentences[validSentences.length - 1].guid === selectedSentenceId }), onClick: function onClick() {
+                            return selectNextSentence();
+                        } }),
+                    isRecording ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: __WEBPACK_IMPORTED_MODULE_4_classnames___default()('fa fa-square player-recorder__button'), onClick: function onClick() {
+                            return _this4.onRecordStop();
+                        } }) : isLoading ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: __WEBPACK_IMPORTED_MODULE_4_classnames___default()('fa fa-spinner fa-spin player-recorder__button') }) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: __WEBPACK_IMPORTED_MODULE_4_classnames___default()('fa fa-circle player-recorder__button'), onClick: function onClick() {
+                            return _this4.onRecordStart();
+                        } }),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('audio', {
+                        className: __WEBPACK_IMPORTED_MODULE_4_classnames___default()('player-recorder__audio', { 'player-recorder__audio--hidden': !selectedSentence.sound }),
+                        ref: function ref(e) {
+                            _this4.audio = e;
+                        },
+                        src: selectedSentence.sound ? 'http://localhost:3000/api/sentences/' + selectedSentence.sound + '/sound' : '',
+                        controls: true })
+                ) : __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    null,
+                    'There are no selected sentences'
+                )
+            );
+        }
+    }]);
+
+    return PlayerRecorder;
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
+
+/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_1_react_redux__["b" /* connect */])(function (state) {
+    return {
+        selectedSentenceId: state.sentences.selectedSentenceId,
+        validSentences: state.sentences.validSentences
+    };
+}, function (dispatch) {
+    return {
+        selectNextSentence: Object(__WEBPACK_IMPORTED_MODULE_2_redux__["b" /* bindActionCreators */])(__WEBPACK_IMPORTED_MODULE_6__modules_sentences__["i" /* selectNextSentence */], dispatch),
+        selectPrevSentence: Object(__WEBPACK_IMPORTED_MODULE_2_redux__["b" /* bindActionCreators */])(__WEBPACK_IMPORTED_MODULE_6__modules_sentences__["j" /* selectPrevSentence */], dispatch),
+        saveSelectedSound: Object(__WEBPACK_IMPORTED_MODULE_2_redux__["b" /* bindActionCreators */])(__WEBPACK_IMPORTED_MODULE_6__modules_sentences__["g" /* saveSelectedSound */], dispatch)
+    };
+})(PlayerRecorder));
 
 /***/ }),
 /* 72 */
@@ -6880,48 +7360,225 @@ if (true) {
 
 /***/ }),
 /* 73 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
+  Copyright (c) 2016 Jed Watson.
+  Licensed under the MIT License (MIT), see
+  http://jedwatson.github.io/classnames
+*/
+/* global define */
+
+(function () {
+	'use strict';
+
+	var hasOwn = {}.hasOwnProperty;
+
+	function classNames () {
+		var classes = [];
+
+		for (var i = 0; i < arguments.length; i++) {
+			var arg = arguments[i];
+			if (!arg) continue;
+
+			var argType = typeof arg;
+
+			if (argType === 'string' || argType === 'number') {
+				classes.push(arg);
+			} else if (Array.isArray(arg)) {
+				classes.push(classNames.apply(null, arg));
+			} else if (argType === 'object') {
+				for (var key in arg) {
+					if (hasOwn.call(arg, key) && arg[key]) {
+						classes.push(key);
+					}
+				}
+			}
+		}
+
+		return classes.join(' ');
+	}
+
+	if (typeof module !== 'undefined' && module.exports) {
+		module.exports = classNames;
+	} else if (true) {
+		// register as 'classnames', consistent with npm package name
+		!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
+			return classNames;
+		}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	} else {
+		window.classNames = classNames;
+	}
+}());
+
+
+/***/ }),
+/* 74 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 74 */
+/* 75 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Loading; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-var Loading=function Loading(){return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div',null,'Loading...');};
+
+
+var Loading = function Loading() {
+  return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+    'div',
+    null,
+    'Loading...'
+  );
+};
 
 /***/ }),
-/* 75 */
+/* 76 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 76 */
+/* 77 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_findAndReplaceDOMText__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_findAndReplaceDOMText__ = __webpack_require__(78);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_findAndReplaceDOMText___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__services_findAndReplaceDOMText__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modules_sentences__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__index_css__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__index_css__ = __webpack_require__(79);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__index_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__index_css__);
-var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();function _toConsumableArray(arr){if(Array.isArray(arr)){for(var i=0,arr2=Array(arr.length);i<arr.length;i++){arr2[i]=arr[i];}return arr2;}else{return Array.from(arr);}}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}var Sentences=function(){function Sentences(store){_classCallCheck(this,Sentences);this.SENTENCE_CLASS='ilt';this.SELECTED_CLASS='ilt--selected';this.TAGS_DIVIDER=',';this.TAG_NUMBER_DIVIDER=':';this.SENTENCE_NUMBER_DIVIDER='|';this.sentencesCache={};this.store=store;this.store.subscribe(this.onStoreUpdate.bind(this));}_createClass(Sentences,[{key:'onStoreUpdate',value:function onStoreUpdate(){if(this.store.getState().lastAction.type===__WEBPACK_IMPORTED_MODULE_1__modules_sentences__["b" /* SET_VALIDATED_SENTENCES */]){this.initialize();}if(this.store.getState().lastAction.type===__WEBPACK_IMPORTED_MODULE_1__modules_sentences__["a" /* SELECT_SENTENCE */]){this.onSelectSentenceChanged();}}},{key:'initialize',value:function initialize(){this.sentences=this.store.getState().sentences.validSentences;this.rootSelector=this.store.getState().sentences.rootSelector;this.wrapSegments();}},{key:'wrapSegments',value:function wrapSegments(){var _this=this;var sentences=this.sentences.slice().reverse();sentences.forEach(function(sentence){var sentenceNumber=sentence.xPath.split(_this.SENTENCE_NUMBER_DIVIDER)[1];sentence.xPath=sentence.xPath.substr(0,sentence.xPath.indexOf(_this.SENTENCE_NUMBER_DIVIDER));var selector=_this.generateSelector(_this.rootSelector,sentence.xPath);var sentenceContent=sentence.sentence;_this.wrapBySelector(selector,sentenceContent,sentence.guid);});}},{key:'wrapBySelector',value:function wrapBySelector(selector,sentenceContent,id){// if (!this.sentencesCache[selector]) {
-//   this.sentencesCache[selector] = this.splitBySentences(selector);
-// }
-__WEBPACK_IMPORTED_MODULE_0__services_findAndReplaceDOMText___default()(document.querySelector(selector),{find:sentenceContent,wrap:'span',wrapClass:id+' sentence-wrapper'});}},{key:'splitBySentences',value:function splitBySentences(selector){var text='';try{text=document.querySelector(selector).textContent;}catch(e){console.log(selector);}var res=[];// for (let path of text.split("\n")) {
-res.push.apply(res,_toConsumableArray(text.replace(/([.?!])\s*(?=[A-ZА-Я\$])/g,"$1|").split("|").map(function(v){return v.trim();})));// }
-return res;}},{key:'generateSelector',value:function generateSelector(root,xPath){var _this2=this;var paths=xPath.split(this.TAGS_DIVIDER);var selector=root+' ';paths.forEach(function(path,index){path=path.split(_this2.TAG_NUMBER_DIVIDER);selector+=path[0]+(':nth-of-type('+path[1]+') ');});return selector;}},{key:'onSentenceClick',value:function onSentenceClick(event){if(event.target.parentElement.classList.contains(this.SENTENCE_CLASS)){this.removeSelectedClass();this.store.dispatch(Object(__WEBPACK_IMPORTED_MODULE_1__modules_sentences__["g" /* selectSentence */])(event.target.parentElement.id));this.addSelectedClass();}else{this.removeSelectedClass();this.store.dispatch(Object(__WEBPACK_IMPORTED_MODULE_1__modules_sentences__["g" /* selectSentence */])(null));}}},{key:'onSelectSentenceChanged',value:function onSelectSentenceChanged(){this.removeSelectedClass();this.addSelectedClass();}},{key:'removeSelectedClass',value:function removeSelectedClass(id){var selectedSentenceId=this.store.getState().sentences.selectedSentenceId;if(selectedSentenceId!==null){document.getElementById(selectedSentenceId).classList.remove(this.SELECTED_CLASS);}}},{key:'addSelectedClass',value:function addSelectedClass(id){var selectedSentenceId=this.store.getState().sentences.selectedSentenceId;document.getElementById(selectedSentenceId).classList.add(this.SELECTED_CLASS);}}]);return Sentences;}();/* harmony default export */ __webpack_exports__["a"] = (Sentences);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+
+
+
+
+
+var Sentences = function () {
+  function Sentences(store) {
+    _classCallCheck(this, Sentences);
+
+    this.SENTENCE_CLASS = 'sentence-wrapper';
+    this.SELECTED_SENTENCE_CLASS = 'sentence-wrapper--selected';
+    this.TAGS_DIVIDER = ',';
+    this.TAG_NUMBER_DIVIDER = ':';
+    this.SENTENCE_NUMBER_DIVIDER = '|';
+
+    this.store = store;
+    this.store.subscribe(this.onStoreUpdate.bind(this));
+  }
+
+  _createClass(Sentences, [{
+    key: 'onStoreUpdate',
+    value: function onStoreUpdate() {
+      if (this.store.getState().lastAction.type === __WEBPACK_IMPORTED_MODULE_1__modules_sentences__["c" /* SET_VALIDATED_SENTENCES */]) {
+        this.initialize();
+      }
+      if (this.store.getState().lastAction.type === __WEBPACK_IMPORTED_MODULE_1__modules_sentences__["b" /* SELECT_SENTENCE */]) {
+        this.onSelectedSentenceChanged();
+      }
+    }
+  }, {
+    key: 'initialize',
+    value: function initialize() {
+      this.sentences = this.store.getState().sentences.validSentences;
+      this.rootSelector = this.store.getState().sentences.rootSelector;
+
+      this.wrapSegments();
+      this.store.dispatch(Object(__WEBPACK_IMPORTED_MODULE_1__modules_sentences__["h" /* selectFirstSentence */])());
+    }
+  }, {
+    key: 'wrapSegments',
+    value: function wrapSegments() {
+      var _this = this;
+
+      var sentences = this.sentences.slice().reverse();
+      sentences.forEach(function (sentence) {
+        sentence.xPath = sentence.xPath.substr(0, sentence.xPath.indexOf(_this.SENTENCE_NUMBER_DIVIDER));
+        var selector = _this.generateSelector(_this.rootSelector, sentence.xPath);
+        var sentenceContent = sentence.sentence;
+        _this.wrapBySelector(selector, sentenceContent, sentence.guid);
+      });
+    }
+  }, {
+    key: 'wrapBySelector',
+    value: function wrapBySelector(selector, sentenceContent, guid) {
+      var sentenceWithoutNBSP = sentenceContent.replace('&nbsp;', '\xa0');
+      if (document.querySelector(selector) !== null) {
+        var replaceResult = __WEBPACK_IMPORTED_MODULE_0__services_findAndReplaceDOMText___default()(document.querySelector(selector), {
+          find: sentenceWithoutNBSP,
+          wrap: 'span',
+          wrapClass: guid + ' ' + this.SENTENCE_CLASS
+        });
+
+        if (replaceResult.reverts.length > 0) {
+          this.store.dispatch(Object(__WEBPACK_IMPORTED_MODULE_1__modules_sentences__["d" /* addFoundSentence */])({
+            guid: guid
+          }));
+        }
+      }
+    }
+  }, {
+    key: 'generateSelector',
+    value: function generateSelector(root, xPath) {
+      var _this2 = this;
+
+      var paths = xPath.split(this.TAGS_DIVIDER);
+      var selector = root + ' ';
+      paths.forEach(function (path, index) {
+        path = path.split(_this2.TAG_NUMBER_DIVIDER);
+        selector += path[0] + (':nth-of-type(' + path[1] + ') ');
+      });
+      return selector;
+    }
+  }, {
+    key: 'onSelectedSentenceChanged',
+    value: function onSelectedSentenceChanged() {
+      this.removeSelectedClass();
+      this.addSelectedClass();
+    }
+  }, {
+    key: 'removeSelectedClass',
+    value: function removeSelectedClass(id) {
+      var previouslySelectedSentenceId = this.store.getState().sentences.previouslySelectedSentenceId;
+      if (previouslySelectedSentenceId !== null) {
+        var selectedElements = document.getElementsByClassName(previouslySelectedSentenceId);
+        for (var i = 0; i < selectedElements.length; i++) {
+          selectedElements[i].classList.remove(this.SELECTED_SENTENCE_CLASS);
+        }
+      }
+    }
+  }, {
+    key: 'addSelectedClass',
+    value: function addSelectedClass(id) {
+      var selectedSentenceId = this.store.getState().sentences.selectedSentenceId;
+      var selectedElements = document.getElementsByClassName(selectedSentenceId);
+      for (var i = 0; i < selectedElements.length; i++) {
+        selectedElements[i].classList.add(this.SELECTED_SENTENCE_CLASS);
+      }
+    }
+  }]);
+
+  return Sentences;
+}();
+
+/* harmony default export */ __webpack_exports__["a"] = (Sentences);
 
 /***/ }),
-/* 77 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(module) {var _typeof=typeof Symbol==="function"&&typeof Symbol.iterator==="symbol"?function(obj){return typeof obj;}:function(obj){return obj&&typeof Symbol==="function"&&obj.constructor===Symbol&&obj!==Symbol.prototype?"symbol":typeof obj;};/**
+/* WEBPACK VAR INJECTION */(function(module) {var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+/**
  * findAndReplaceDOMText v 0.4.6
  * @author James Padolsey http://james.padolsey.com
  * @license http://unlicense.org/UNLICENSE
@@ -6929,89 +7586,603 @@ return res;}},{key:'generateSelector',value:function generateSelector(root,xPath
  * Matches the text of a DOM node against a regular expression
  * and replaces each match (or node-separated portions of the match)
  * in the specified element.
- */(function(root,factory){if(( false?'undefined':_typeof(module))==='object'&&module.exports){// Node/CommonJS
-module.exports=factory();// } else if (typeof define === 'function' && define.amd) {
-//     // AMD. Register as an anonymous module.
-//     define(factory);
-}else{// Browser globals
-root.findAndReplaceDOMText=factory();}})(this,function factory(){var PORTION_MODE_RETAIN='retain';var PORTION_MODE_FIRST='first';var doc=document;var hasOwn={}.hasOwnProperty;function escapeRegExp(s){return String(s).replace(/([.*+?^=!:${}()|[\]\/\\])/g,'\\$1');}function exposed(){// Try deprecated arg signature first:
-return deprecated.apply(null,arguments)||findAndReplaceDOMText.apply(null,arguments);}function deprecated(regex,node,replacement,captureGroup,elFilter){if(node&&!node.nodeType&&arguments.length<=2){return false;}var isReplacementFunction=typeof replacement=='function';if(isReplacementFunction){replacement=function(original){return function(portion,match){return original(portion.text,match.startIndex);};}(replacement);}// Awkward support for deprecated argument signature (<0.4.0)
-var instance=findAndReplaceDOMText(node,{find:regex,wrap:isReplacementFunction?null:replacement,replace:isReplacementFunction?replacement:'$'+(captureGroup||'&'),prepMatch:function prepMatch(m,mi){// Support captureGroup (a deprecated feature)
-if(!m[0])throw'findAndReplaceDOMText cannot handle zero-length matches';if(captureGroup>0){var cg=m[captureGroup];m.index+=m[0].indexOf(cg);m[0]=cg;}m.endIndex=m.index+m[0].length;m.startIndex=m.index;m.index=mi;return m;},filterElements:elFilter});exposed.revert=function(){return instance.revert();};return true;}/**
-* findAndReplaceDOMText
-*
-* Locates matches and replaces with replacementNode
-*
-* @param {Node} node Element or Text node to search within
-* @param {RegExp} options.find The regular expression to match
-* @param {String|Element} [options.wrap] A NodeName, or a Node to clone
-* @param {String} [options.wrapClass] A classname to append to the wrapping element
-* @param {String|Function} [options.replace='$&'] What to replace each match with
-* @param {Function} [options.filterElements] A Function to be called to check whether to
-*	process an element. (returning true = process element,
-*	returning false = avoid element)
-*/function findAndReplaceDOMText(node,options){return new Finder(node,options);}exposed.NON_PROSE_ELEMENTS={br:1,hr:1,// Media / Source elements:
-script:1,style:1,img:1,video:1,audio:1,canvas:1,svg:1,map:1,object:1,// Input elements
-input:1,textarea:1,select:1,option:1,optgroup:1,button:1};exposed.NON_CONTIGUOUS_PROSE_ELEMENTS={// Elements that will not contain prose or block elements where we don't
-// want prose to be matches across element borders:
-// Block Elements
-address:1,article:1,aside:1,blockquote:1,dd:1,div:1,dl:1,fieldset:1,figcaption:1,figure:1,footer:1,form:1,h1:1,h2:1,h3:1,h4:1,h5:1,h6:1,header:1,hgroup:1,hr:1,main:1,nav:1,noscript:1,ol:1,output:1,p:1,pre:1,section:1,ul:1,// Other misc. elements that are not part of continuous inline prose:
-br:1,li:1,summary:1,dt:1,details:1,rp:1,rt:1,rtc:1,// Media / Source elements:
-script:1,style:1,img:1,video:1,audio:1,canvas:1,svg:1,map:1,object:1,// Input elements
-input:1,textarea:1,select:1,option:1,optgroup:1,button:1,// Table related elements:
-table:1,tbody:1,thead:1,th:1,tr:1,td:1,caption:1,col:1,tfoot:1,colgroup:1};exposed.NON_INLINE_PROSE=function(el){return hasOwn.call(exposed.NON_CONTIGUOUS_PROSE_ELEMENTS,el.nodeName.toLowerCase());};// Presets accessed via `options.preset` when calling findAndReplaceDOMText():
-exposed.PRESETS={prose:{forceContext:exposed.NON_INLINE_PROSE,filterElements:function filterElements(el){return!hasOwn.call(exposed.NON_PROSE_ELEMENTS,el.nodeName.toLowerCase());}}};exposed.Finder=Finder;/**
-* Finder -- encapsulates logic to find and replace.
-*/function Finder(node,options){var preset=options.preset&&exposed.PRESETS[options.preset];options.portionMode=options.portionMode||PORTION_MODE_RETAIN;if(preset){for(var i in preset){if(hasOwn.call(preset,i)&&!hasOwn.call(options,i)){options[i]=preset[i];}}}this.node=node;this.options=options;// Enable match-preparation method to be passed as option:
-this.prepMatch=options.prepMatch||this.prepMatch;this.reverts=[];this.matches=this.search();if(this.matches.length){this.processMatches();}}Finder.prototype={/**
-  * Searches for all matches that comply with the instance's 'match' option
-  */search:function search(){var match;var matchIndex=0;var offset=0;var regex=this.options.find;var textAggregation=this.getAggregateText();var matches=[];var self=this;regex=typeof regex==='string'?RegExp(escapeRegExp(regex),'g'):regex;matchAggregation(textAggregation);function matchAggregation(textAggregation){for(var i=0,l=textAggregation.length;i<l;++i){var text=textAggregation[i];if(typeof text!=='string'){// Deal with nested contexts: (recursive)
-matchAggregation(text);continue;}if(regex.global){while(match=regex.exec(text)){matches.push(self.prepMatch(match,matchIndex++,offset));}}else{if(match=text.match(regex)){matches.push(self.prepMatch(match,0,offset));}}offset+=text.length;}}return matches;},/**
-  * Prepares a single match with useful meta info:
-  */prepMatch:function prepMatch(match,matchIndex,characterOffset){if(!match[0]){throw new Error('findAndReplaceDOMText cannot handle zero-length matches');}match.endIndex=characterOffset+match.index+match[0].length;match.startIndex=characterOffset+match.index;match.index=matchIndex;return match;},/**
-  * Gets aggregate text within subject node
-  */getAggregateText:function getAggregateText(){var elementFilter=this.options.filterElements;var forceContext=this.options.forceContext;return getText(this.node);/**
-    * Gets aggregate text of a node without resorting
-    * to broken innerText/textContent
-    */function getText(node){if(node.nodeType===Node.TEXT_NODE){return[node.data];}if(elementFilter&&!elementFilter(node)){return[];}var txt=[''];var i=0;if(node=node.firstChild)do{if(node.nodeType===Node.TEXT_NODE){txt[i]+=node.data;continue;}var innerText=getText(node);if(forceContext&&node.nodeType===Node.ELEMENT_NODE&&(forceContext===true||forceContext(node))){txt[++i]=innerText;txt[++i]='';}else{if(typeof innerText[0]==='string'){// Bridge nested text-node data so that they're
-// not considered their own contexts:
-// I.e. ['some', ['thing']] -> ['something']
-txt[i]+=innerText.shift();}if(innerText.length){txt[++i]=innerText;txt[++i]='';}}}while(node=node.nextSibling);return txt;}},/**
-  * Steps through the target node, looking for matches, and
-  * calling replaceFn when a match is found.
-  */processMatches:function processMatches(){var matches=this.matches;var node=this.node;var elementFilter=this.options.filterElements;var startPortion,endPortion,innerPortions=[],curNode=node,match=matches.shift(),atIndex=0,// i.e. nodeAtIndex
-matchIndex=0,portionIndex=0,doAvoidNode,nodeStack=[node];out:while(true){if(curNode.nodeType===Node.TEXT_NODE){if(!endPortion&&curNode.length+atIndex>=match.endIndex){// We've found the ending
-// (Note that, in the case of a single portion, it'll be an
-// endPortion, not a startPortion.)
-endPortion={node:curNode,index:portionIndex++,text:curNode.data.substring(match.startIndex-atIndex,match.endIndex-atIndex),// If it's the first match (atIndex==0) we should just return 0
-indexInMatch:atIndex===0?0:atIndex-match.startIndex,indexInNode:match.startIndex-atIndex,endIndexInNode:match.endIndex-atIndex,isEnd:true};}else if(startPortion){// Intersecting node
-innerPortions.push({node:curNode,index:portionIndex++,text:curNode.data,indexInMatch:atIndex-match.startIndex,indexInNode:0// always zero for inner-portions
-});}if(!startPortion&&curNode.length+atIndex>match.startIndex){// We've found the match start
-startPortion={node:curNode,index:portionIndex++,indexInMatch:0,indexInNode:match.startIndex-atIndex,endIndexInNode:match.endIndex-atIndex,text:curNode.data.substring(match.startIndex-atIndex,match.endIndex-atIndex)};}atIndex+=curNode.data.length;}doAvoidNode=curNode.nodeType===Node.ELEMENT_NODE&&elementFilter&&!elementFilter(curNode);if(startPortion&&endPortion){curNode=this.replaceMatch(match,startPortion,innerPortions,endPortion);// processMatches has to return the node that replaced the endNode
-// and then we step back so we can continue from the end of the
-// match:
-atIndex-=endPortion.node.data.length-endPortion.endIndexInNode;startPortion=null;endPortion=null;innerPortions=[];match=matches.shift();portionIndex=0;matchIndex++;if(!match){break;// no more matches
-}}else if(!doAvoidNode&&(curNode.firstChild||curNode.nextSibling)){// Move down or forward:
-if(curNode.firstChild){nodeStack.push(curNode);curNode=curNode.firstChild;}else{curNode=curNode.nextSibling;}continue;}// Move forward or up:
-while(true){if(curNode.nextSibling){curNode=curNode.nextSibling;break;}curNode=nodeStack.pop();if(curNode===node){break out;}}}},/**
-  * Reverts ... TODO
-  */revert:function revert(){// Reversion occurs backwards so as to avoid nodes subsequently
-// replaced during the matching phase (a forward process):
-for(var l=this.reverts.length;l--;){this.reverts[l]();}this.reverts=[];},prepareReplacementString:function prepareReplacementString(string,portion,match){var portionMode=this.options.portionMode;if(portionMode===PORTION_MODE_FIRST&&portion.indexInMatch>0){return'';}string=string.replace(/\$(\d+|&|`|')/g,function($0,t){var replacement;switch(t){case'&':replacement=match[0];break;case'`':replacement=match.input.substring(0,match.startIndex);break;case'\'':replacement=match.input.substring(match.endIndex);break;default:replacement=match[+t]||'';}return replacement;});if(portionMode===PORTION_MODE_FIRST){return string;}if(portion.isEnd){return string.substring(portion.indexInMatch);}return string.substring(portion.indexInMatch,portion.indexInMatch+portion.text.length);},getPortionReplacementNode:function getPortionReplacementNode(portion,match){var replacement=this.options.replace||'$&';var wrapper=this.options.wrap;var wrapperClass=this.options.wrapClass;if(wrapper&&wrapper.nodeType){// Wrapper has been provided as a stencil-node for us to clone:
-var clone=doc.createElement('div');clone.innerHTML=wrapper.outerHTML||new XMLSerializer().serializeToString(wrapper);wrapper=clone.firstChild;}if(typeof replacement=='function'){replacement=replacement(portion,match);if(replacement&&replacement.nodeType){return replacement;}return doc.createTextNode(String(replacement));}var el=typeof wrapper=='string'?doc.createElement(wrapper):wrapper;if(el&&wrapperClass){el.className=wrapperClass;}replacement=doc.createTextNode(this.prepareReplacementString(replacement,portion,match));if(!replacement.data){return replacement;}if(!el){return replacement;}el.appendChild(replacement);return el;},replaceMatch:function replaceMatch(match,startPortion,innerPortions,endPortion){var matchStartNode=startPortion.node;var matchEndNode=endPortion.node;var precedingTextNode;var followingTextNode;if(matchStartNode===matchEndNode){var node=matchStartNode;if(startPortion.indexInNode>0){// Add `before` text node (before the match)
-precedingTextNode=doc.createTextNode(node.data.substring(0,startPortion.indexInNode));node.parentNode.insertBefore(precedingTextNode,node);}// Create the replacement node:
-var newNode=this.getPortionReplacementNode(endPortion,match);node.parentNode.insertBefore(newNode,node);if(endPortion.endIndexInNode<node.length){// ?????
-// Add `after` text node (after the match)
-followingTextNode=doc.createTextNode(node.data.substring(endPortion.endIndexInNode));node.parentNode.insertBefore(followingTextNode,node);}node.parentNode.removeChild(node);this.reverts.push(function(){if(precedingTextNode===newNode.previousSibling){precedingTextNode.parentNode.removeChild(precedingTextNode);}if(followingTextNode===newNode.nextSibling){followingTextNode.parentNode.removeChild(followingTextNode);}newNode.parentNode.replaceChild(node,newNode);});return newNode;}else{// Replace matchStartNode -> [innerMatchNodes...] -> matchEndNode (in that order)
-precedingTextNode=doc.createTextNode(matchStartNode.data.substring(0,startPortion.indexInNode));followingTextNode=doc.createTextNode(matchEndNode.data.substring(endPortion.endIndexInNode));var firstNode=this.getPortionReplacementNode(startPortion,match);var innerNodes=[];for(var i=0,l=innerPortions.length;i<l;++i){var portion=innerPortions[i];var innerNode=this.getPortionReplacementNode(portion,match);portion.node.parentNode.replaceChild(innerNode,portion.node);this.reverts.push(function(portion,innerNode){return function(){innerNode.parentNode.replaceChild(portion.node,innerNode);};}(portion,innerNode));innerNodes.push(innerNode);}var lastNode=this.getPortionReplacementNode(endPortion,match);matchStartNode.parentNode.insertBefore(precedingTextNode,matchStartNode);matchStartNode.parentNode.insertBefore(firstNode,matchStartNode);matchStartNode.parentNode.removeChild(matchStartNode);matchEndNode.parentNode.insertBefore(lastNode,matchEndNode);matchEndNode.parentNode.insertBefore(followingTextNode,matchEndNode);matchEndNode.parentNode.removeChild(matchEndNode);this.reverts.push(function(){precedingTextNode.parentNode.removeChild(precedingTextNode);firstNode.parentNode.replaceChild(matchStartNode,firstNode);followingTextNode.parentNode.removeChild(followingTextNode);lastNode.parentNode.replaceChild(matchEndNode,lastNode);});return lastNode;}}};return exposed;});
+ */
+(function (root, factory) {
+  if (( false ? 'undefined' : _typeof(module)) === 'object' && module.exports) {
+    // Node/CommonJS
+    module.exports = factory();
+    // } else if (typeof define === 'function' && define.amd) {
+    //     // AMD. Register as an anonymous module.
+    //     define(factory);
+  } else {
+    // Browser globals
+    root.findAndReplaceDOMText = factory();
+  }
+})(this, function factory() {
+
+  var PORTION_MODE_RETAIN = 'retain';
+  var PORTION_MODE_FIRST = 'first';
+
+  var doc = document;
+  var hasOwn = {}.hasOwnProperty;
+
+  function escapeRegExp(s) {
+    return String(s).replace(/([.*+?^=!:${}()|[\]\/\\])/g, '\\$1');
+  }
+
+  function exposed() {
+    // Try deprecated arg signature first:
+    return deprecated.apply(null, arguments) || findAndReplaceDOMText.apply(null, arguments);
+  }
+
+  function deprecated(regex, node, replacement, captureGroup, elFilter) {
+    if (node && !node.nodeType && arguments.length <= 2) {
+      return false;
+    }
+    var isReplacementFunction = typeof replacement == 'function';
+
+    if (isReplacementFunction) {
+      replacement = function (original) {
+        return function (portion, match) {
+          return original(portion.text, match.startIndex);
+        };
+      }(replacement);
+    }
+
+    // Awkward support for deprecated argument signature (<0.4.0)
+    var instance = findAndReplaceDOMText(node, {
+
+      find: regex,
+
+      wrap: isReplacementFunction ? null : replacement,
+      replace: isReplacementFunction ? replacement : '$' + (captureGroup || '&'),
+
+      prepMatch: function prepMatch(m, mi) {
+
+        // Support captureGroup (a deprecated feature)
+
+        if (!m[0]) throw 'findAndReplaceDOMText cannot handle zero-length matches';
+
+        if (captureGroup > 0) {
+          var cg = m[captureGroup];
+          m.index += m[0].indexOf(cg);
+          m[0] = cg;
+        }
+
+        m.endIndex = m.index + m[0].length;
+        m.startIndex = m.index;
+        m.index = mi;
+
+        return m;
+      },
+      filterElements: elFilter
+    });
+
+    exposed.revert = function () {
+      return instance.revert();
+    };
+
+    return true;
+  }
+
+  /**
+  * findAndReplaceDOMText
+  *
+  * Locates matches and replaces with replacementNode
+  *
+  * @param {Node} node Element or Text node to search within
+  * @param {RegExp} options.find The regular expression to match
+  * @param {String|Element} [options.wrap] A NodeName, or a Node to clone
+  * @param {String} [options.wrapClass] A classname to append to the wrapping element
+  * @param {String|Function} [options.replace='$&'] What to replace each match with
+  * @param {Function} [options.filterElements] A Function to be called to check whether to
+  *	process an element. (returning true = process element,
+  *	returning false = avoid element)
+  */
+  function findAndReplaceDOMText(node, options) {
+    return new Finder(node, options);
+  }
+
+  exposed.NON_PROSE_ELEMENTS = {
+    br: 1, hr: 1,
+    // Media / Source elements:
+    script: 1, style: 1, img: 1, video: 1, audio: 1, canvas: 1, svg: 1, map: 1, object: 1,
+    // Input elements
+    input: 1, textarea: 1, select: 1, option: 1, optgroup: 1, button: 1
+  };
+
+  exposed.NON_CONTIGUOUS_PROSE_ELEMENTS = {
+
+    // Elements that will not contain prose or block elements where we don't
+    // want prose to be matches across element borders:
+
+    // Block Elements
+    address: 1, article: 1, aside: 1, blockquote: 1, dd: 1, div: 1,
+    dl: 1, fieldset: 1, figcaption: 1, figure: 1, footer: 1, form: 1, h1: 1, h2: 1, h3: 1,
+    h4: 1, h5: 1, h6: 1, header: 1, hgroup: 1, hr: 1, main: 1, nav: 1, noscript: 1, ol: 1,
+    output: 1, p: 1, pre: 1, section: 1, ul: 1,
+    // Other misc. elements that are not part of continuous inline prose:
+    br: 1, li: 1, summary: 1, dt: 1, details: 1, rp: 1, rt: 1, rtc: 1,
+    // Media / Source elements:
+    script: 1, style: 1, img: 1, video: 1, audio: 1, canvas: 1, svg: 1, map: 1, object: 1,
+    // Input elements
+    input: 1, textarea: 1, select: 1, option: 1, optgroup: 1, button: 1,
+    // Table related elements:
+    table: 1, tbody: 1, thead: 1, th: 1, tr: 1, td: 1, caption: 1, col: 1, tfoot: 1, colgroup: 1
+
+  };
+
+  exposed.NON_INLINE_PROSE = function (el) {
+    return hasOwn.call(exposed.NON_CONTIGUOUS_PROSE_ELEMENTS, el.nodeName.toLowerCase());
+  };
+
+  // Presets accessed via `options.preset` when calling findAndReplaceDOMText():
+  exposed.PRESETS = {
+    prose: {
+      forceContext: exposed.NON_INLINE_PROSE,
+      filterElements: function filterElements(el) {
+        return !hasOwn.call(exposed.NON_PROSE_ELEMENTS, el.nodeName.toLowerCase());
+      }
+    }
+  };
+
+  exposed.Finder = Finder;
+
+  /**
+  * Finder -- encapsulates logic to find and replace.
+  */
+  function Finder(node, options) {
+
+    var preset = options.preset && exposed.PRESETS[options.preset];
+
+    options.portionMode = options.portionMode || PORTION_MODE_RETAIN;
+
+    if (preset) {
+      for (var i in preset) {
+        if (hasOwn.call(preset, i) && !hasOwn.call(options, i)) {
+          options[i] = preset[i];
+        }
+      }
+    }
+
+    this.node = node;
+    this.options = options;
+
+    // Enable match-preparation method to be passed as option:
+    this.prepMatch = options.prepMatch || this.prepMatch;
+
+    this.reverts = [];
+
+    this.matches = this.search();
+
+    if (this.matches.length) {
+      this.processMatches();
+    }
+  }
+
+  Finder.prototype = {
+
+    /**
+     * Searches for all matches that comply with the instance's 'match' option
+     */
+    search: function search() {
+
+      var match;
+      var matchIndex = 0;
+      var offset = 0;
+      var regex = this.options.find;
+      var textAggregation = this.getAggregateText();
+      var matches = [];
+      var self = this;
+
+      regex = typeof regex === 'string' ? RegExp(escapeRegExp(regex), 'g') : regex;
+
+      matchAggregation(textAggregation);
+
+      function matchAggregation(textAggregation) {
+        for (var i = 0, l = textAggregation.length; i < l; ++i) {
+
+          var text = textAggregation[i];
+
+          if (typeof text !== 'string') {
+            // Deal with nested contexts: (recursive)
+            matchAggregation(text);
+            continue;
+          }
+
+          if (regex.global) {
+            while (match = regex.exec(text)) {
+              matches.push(self.prepMatch(match, matchIndex++, offset));
+            }
+          } else {
+            if (match = text.match(regex)) {
+              matches.push(self.prepMatch(match, 0, offset));
+            }
+          }
+
+          offset += text.length;
+        }
+      }
+
+      return matches;
+    },
+
+    /**
+     * Prepares a single match with useful meta info:
+     */
+    prepMatch: function prepMatch(match, matchIndex, characterOffset) {
+
+      if (!match[0]) {
+        throw new Error('findAndReplaceDOMText cannot handle zero-length matches');
+      }
+
+      match.endIndex = characterOffset + match.index + match[0].length;
+      match.startIndex = characterOffset + match.index;
+      match.index = matchIndex;
+
+      return match;
+    },
+
+    /**
+     * Gets aggregate text within subject node
+     */
+    getAggregateText: function getAggregateText() {
+
+      var elementFilter = this.options.filterElements;
+      var forceContext = this.options.forceContext;
+
+      return getText(this.node);
+
+      /**
+       * Gets aggregate text of a node without resorting
+       * to broken innerText/textContent
+       */
+      function getText(node) {
+
+        if (node.nodeType === Node.TEXT_NODE) {
+          return [node.data];
+        }
+
+        if (elementFilter && !elementFilter(node)) {
+          return [];
+        }
+
+        var txt = [''];
+        var i = 0;
+
+        if (node = node.firstChild) do {
+
+          if (node.nodeType === Node.TEXT_NODE) {
+            txt[i] += node.data;
+            continue;
+          }
+
+          var innerText = getText(node);
+
+          if (forceContext && node.nodeType === Node.ELEMENT_NODE && (forceContext === true || forceContext(node))) {
+            txt[++i] = innerText;
+            txt[++i] = '';
+          } else {
+            if (typeof innerText[0] === 'string') {
+              // Bridge nested text-node data so that they're
+              // not considered their own contexts:
+              // I.e. ['some', ['thing']] -> ['something']
+              txt[i] += innerText.shift();
+            }
+            if (innerText.length) {
+              txt[++i] = innerText;
+              txt[++i] = '';
+            }
+          }
+        } while (node = node.nextSibling);
+
+        return txt;
+      }
+    },
+
+    /**
+     * Steps through the target node, looking for matches, and
+     * calling replaceFn when a match is found.
+     */
+    processMatches: function processMatches() {
+
+      var matches = this.matches;
+      var node = this.node;
+      var elementFilter = this.options.filterElements;
+
+      var startPortion,
+          endPortion,
+          innerPortions = [],
+          curNode = node,
+          match = matches.shift(),
+          atIndex = 0,
+          // i.e. nodeAtIndex
+      matchIndex = 0,
+          portionIndex = 0,
+          doAvoidNode,
+          nodeStack = [node];
+
+      out: while (true) {
+
+        if (curNode.nodeType === Node.TEXT_NODE) {
+
+          if (!endPortion && curNode.length + atIndex >= match.endIndex) {
+            // We've found the ending
+            // (Note that, in the case of a single portion, it'll be an
+            // endPortion, not a startPortion.)
+            endPortion = {
+              node: curNode,
+              index: portionIndex++,
+              text: curNode.data.substring(match.startIndex - atIndex, match.endIndex - atIndex),
+
+              // If it's the first match (atIndex==0) we should just return 0
+              indexInMatch: atIndex === 0 ? 0 : atIndex - match.startIndex,
+
+              indexInNode: match.startIndex - atIndex,
+              endIndexInNode: match.endIndex - atIndex,
+              isEnd: true
+            };
+          } else if (startPortion) {
+            // Intersecting node
+            innerPortions.push({
+              node: curNode,
+              index: portionIndex++,
+              text: curNode.data,
+              indexInMatch: atIndex - match.startIndex,
+              indexInNode: 0 // always zero for inner-portions
+            });
+          }
+
+          if (!startPortion && curNode.length + atIndex > match.startIndex) {
+            // We've found the match start
+            startPortion = {
+              node: curNode,
+              index: portionIndex++,
+              indexInMatch: 0,
+              indexInNode: match.startIndex - atIndex,
+              endIndexInNode: match.endIndex - atIndex,
+              text: curNode.data.substring(match.startIndex - atIndex, match.endIndex - atIndex)
+            };
+          }
+
+          atIndex += curNode.data.length;
+        }
+
+        doAvoidNode = curNode.nodeType === Node.ELEMENT_NODE && elementFilter && !elementFilter(curNode);
+
+        if (startPortion && endPortion) {
+
+          curNode = this.replaceMatch(match, startPortion, innerPortions, endPortion);
+
+          // processMatches has to return the node that replaced the endNode
+          // and then we step back so we can continue from the end of the
+          // match:
+
+          atIndex -= endPortion.node.data.length - endPortion.endIndexInNode;
+
+          startPortion = null;
+          endPortion = null;
+          innerPortions = [];
+          match = matches.shift();
+          portionIndex = 0;
+          matchIndex++;
+
+          if (!match) {
+            break; // no more matches
+          }
+        } else if (!doAvoidNode && (curNode.firstChild || curNode.nextSibling)) {
+          // Move down or forward:
+          if (curNode.firstChild) {
+            nodeStack.push(curNode);
+            curNode = curNode.firstChild;
+          } else {
+            curNode = curNode.nextSibling;
+          }
+          continue;
+        }
+
+        // Move forward or up:
+        while (true) {
+          if (curNode.nextSibling) {
+            curNode = curNode.nextSibling;
+            break;
+          }
+          curNode = nodeStack.pop();
+          if (curNode === node) {
+            break out;
+          }
+        }
+      }
+    },
+
+    /**
+     * Reverts ... TODO
+     */
+    revert: function revert() {
+      // Reversion occurs backwards so as to avoid nodes subsequently
+      // replaced during the matching phase (a forward process):
+      for (var l = this.reverts.length; l--;) {
+        this.reverts[l]();
+      }
+      this.reverts = [];
+    },
+
+    prepareReplacementString: function prepareReplacementString(string, portion, match) {
+      var portionMode = this.options.portionMode;
+      if (portionMode === PORTION_MODE_FIRST && portion.indexInMatch > 0) {
+        return '';
+      }
+      string = string.replace(/\$(\d+|&|`|')/g, function ($0, t) {
+        var replacement;
+        switch (t) {
+          case '&':
+            replacement = match[0];
+            break;
+          case '`':
+            replacement = match.input.substring(0, match.startIndex);
+            break;
+          case '\'':
+            replacement = match.input.substring(match.endIndex);
+            break;
+          default:
+            replacement = match[+t] || '';
+        }
+        return replacement;
+      });
+
+      if (portionMode === PORTION_MODE_FIRST) {
+        return string;
+      }
+
+      if (portion.isEnd) {
+        return string.substring(portion.indexInMatch);
+      }
+
+      return string.substring(portion.indexInMatch, portion.indexInMatch + portion.text.length);
+    },
+
+    getPortionReplacementNode: function getPortionReplacementNode(portion, match) {
+
+      var replacement = this.options.replace || '$&';
+      var wrapper = this.options.wrap;
+      var wrapperClass = this.options.wrapClass;
+
+      if (wrapper && wrapper.nodeType) {
+        // Wrapper has been provided as a stencil-node for us to clone:
+        var clone = doc.createElement('div');
+        clone.innerHTML = wrapper.outerHTML || new XMLSerializer().serializeToString(wrapper);
+        wrapper = clone.firstChild;
+      }
+
+      if (typeof replacement == 'function') {
+        replacement = replacement(portion, match);
+        if (replacement && replacement.nodeType) {
+          return replacement;
+        }
+        return doc.createTextNode(String(replacement));
+      }
+
+      var el = typeof wrapper == 'string' ? doc.createElement(wrapper) : wrapper;
+
+      if (el && wrapperClass) {
+        el.className = wrapperClass;
+      }
+
+      replacement = doc.createTextNode(this.prepareReplacementString(replacement, portion, match));
+
+      if (!replacement.data) {
+        return replacement;
+      }
+
+      if (!el) {
+        return replacement;
+      }
+
+      el.appendChild(replacement);
+
+      return el;
+    },
+
+    replaceMatch: function replaceMatch(match, startPortion, innerPortions, endPortion) {
+
+      var matchStartNode = startPortion.node;
+      var matchEndNode = endPortion.node;
+
+      var precedingTextNode;
+      var followingTextNode;
+
+      if (matchStartNode === matchEndNode) {
+
+        var node = matchStartNode;
+
+        if (startPortion.indexInNode > 0) {
+          // Add `before` text node (before the match)
+          precedingTextNode = doc.createTextNode(node.data.substring(0, startPortion.indexInNode));
+          node.parentNode.insertBefore(precedingTextNode, node);
+        }
+
+        // Create the replacement node:
+        var newNode = this.getPortionReplacementNode(endPortion, match);
+
+        node.parentNode.insertBefore(newNode, node);
+
+        if (endPortion.endIndexInNode < node.length) {
+          // ?????
+          // Add `after` text node (after the match)
+          followingTextNode = doc.createTextNode(node.data.substring(endPortion.endIndexInNode));
+          node.parentNode.insertBefore(followingTextNode, node);
+        }
+
+        node.parentNode.removeChild(node);
+
+        this.reverts.push(function () {
+          if (precedingTextNode === newNode.previousSibling) {
+            precedingTextNode.parentNode.removeChild(precedingTextNode);
+          }
+          if (followingTextNode === newNode.nextSibling) {
+            followingTextNode.parentNode.removeChild(followingTextNode);
+          }
+          newNode.parentNode.replaceChild(node, newNode);
+        });
+
+        return newNode;
+      } else {
+        // Replace matchStartNode -> [innerMatchNodes...] -> matchEndNode (in that order)
+
+
+        precedingTextNode = doc.createTextNode(matchStartNode.data.substring(0, startPortion.indexInNode));
+
+        followingTextNode = doc.createTextNode(matchEndNode.data.substring(endPortion.endIndexInNode));
+
+        var firstNode = this.getPortionReplacementNode(startPortion, match);
+
+        var innerNodes = [];
+
+        for (var i = 0, l = innerPortions.length; i < l; ++i) {
+          var portion = innerPortions[i];
+          var innerNode = this.getPortionReplacementNode(portion, match);
+          portion.node.parentNode.replaceChild(innerNode, portion.node);
+          this.reverts.push(function (portion, innerNode) {
+            return function () {
+              innerNode.parentNode.replaceChild(portion.node, innerNode);
+            };
+          }(portion, innerNode));
+          innerNodes.push(innerNode);
+        }
+
+        var lastNode = this.getPortionReplacementNode(endPortion, match);
+
+        matchStartNode.parentNode.insertBefore(precedingTextNode, matchStartNode);
+        matchStartNode.parentNode.insertBefore(firstNode, matchStartNode);
+        matchStartNode.parentNode.removeChild(matchStartNode);
+
+        matchEndNode.parentNode.insertBefore(lastNode, matchEndNode);
+        matchEndNode.parentNode.insertBefore(followingTextNode, matchEndNode);
+        matchEndNode.parentNode.removeChild(matchEndNode);
+
+        this.reverts.push(function () {
+          precedingTextNode.parentNode.removeChild(precedingTextNode);
+          firstNode.parentNode.replaceChild(matchStartNode, firstNode);
+          followingTextNode.parentNode.removeChild(followingTextNode);
+          lastNode.parentNode.replaceChild(matchEndNode, lastNode);
+        });
+
+        return lastNode;
+      }
+    }
+
+  };
+
+  return exposed;
+});
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(16)(module)))
 
 /***/ }),
-/* 78 */
+/* 79 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);
-//# sourceMappingURL=main.ec49722a.js.map
+//# sourceMappingURL=main.1e21d155.js.map
