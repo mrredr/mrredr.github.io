@@ -348,7 +348,9 @@ function selectSentence(id) {
 
 function selectFirstSentence() {
   return function (dispatch, getState) {
-    var firstElementId = getState().sentences.foundSentences[0].guid;
+    var firstElementId = getState().sentences.foundSentences.find(function (s) {
+      return s.order === 0;
+    }).guid;
     dispatch({
       type: SELECT_SENTENCE,
       data: firstElementId
@@ -360,11 +362,13 @@ function selectNextSentence() {
   return function (dispatch, getState) {
     var selectedSentenceId = getState().sentences.selectedSentenceId;
     var foundSentences = getState().sentences.foundSentences;
-    var selectedIndex = foundSentences.findIndex(function (sentence) {
+    var selectedOrder = foundSentences.findIndex(function (sentence) {
       return sentence.guid === selectedSentenceId;
     });
-    var nextIndex = selectedIndex === foundSentences.length - 1 ? selectedIndex : selectedIndex + 1;
-    dispatch(selectSentence(foundSentences[nextIndex].guid));
+    var nextOrder = selectedOrder === foundSentences.length - 1 ? selectedOrder : selectedOrder + 1;
+    dispatch(selectSentence(foundSentences.find(function (s) {
+      return s.order === nextOrder;
+    }).guid));
   };
 }
 
@@ -372,11 +376,13 @@ function selectPrevSentence() {
   return function (dispatch, getState) {
     var selectedSentenceId = getState().sentences.selectedSentenceId;
     var foundSentences = getState().sentences.foundSentences;
-    var selectedIndex = foundSentences.findIndex(function (sentence) {
+    var selectedOrder = foundSentences.findIndex(function (sentence) {
       return sentence.guid === selectedSentenceId;
     });
-    var nextIndex = selectedIndex === 0 ? selectedIndex : selectedIndex - 1;
-    dispatch(selectSentence(foundSentences[nextIndex].guid));
+    var nextOrder = selectedOrder === 0 ? selectedOrder : selectedOrder - 1;
+    dispatch(selectSentence(foundSentences.find(function (s) {
+      return s.order === nextOrder;
+    }).guid));
   };
 }
 
@@ -8185,4 +8191,4 @@ var Sentences = function () {
 
 /***/ })
 /******/ ]);
-//# sourceMappingURL=main.1e21d155.js.map
+//# sourceMappingURL=main.3fa5d0f2.js.map
