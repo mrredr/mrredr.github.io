@@ -318,11 +318,16 @@ function getSentences() {
   return function (dispatch) {
     dispatch({ type: GET_SENTENCES });
 
-    return fetch(SERVER_HOST + '/api/articles/external?url=' + window.location.href).then(function (res) {
+    return fetch(SERVER_HOST + '/api/articles/external?url=' + window.location.href)
+    // return fetch(`${SERVER_HOST}/api/articles/external?url=https://medium.economist.com/can-we-know-what-animals-are-thinking-83991bc994c4`)
+    .then(function (res) {
       return res.ok ? res.json() : function () {
         throw new Error('');
       }();
     }).then(function (data) {
+      data.sentences = data.sentences.sort(function (a, b) {
+        return a.order - b.order;
+      });
       dispatch({
         type: GET_SENTENCES_SUCCESS,
         data: {
@@ -348,9 +353,7 @@ function selectSentence(id) {
 
 function selectFirstSentence() {
   return function (dispatch, getState) {
-    var firstElementId = getState().sentences.foundSentences.find(function (s) {
-      return s.order === 0;
-    }).guid;
+    var firstElementId = getState().sentences.foundSentences[0].guid;
     dispatch({
       type: SELECT_SENTENCE,
       data: firstElementId
@@ -362,13 +365,11 @@ function selectNextSentence() {
   return function (dispatch, getState) {
     var selectedSentenceId = getState().sentences.selectedSentenceId;
     var foundSentences = getState().sentences.foundSentences;
-    var selectedOrder = foundSentences.findIndex(function (sentence) {
+    var selectedIndex = foundSentences.findIndex(function (sentence) {
       return sentence.guid === selectedSentenceId;
     });
-    var nextOrder = selectedOrder === foundSentences.length - 1 ? selectedOrder : selectedOrder + 1;
-    dispatch(selectSentence(foundSentences.find(function (s) {
-      return s.order === nextOrder;
-    }).guid));
+    var nextIndex = selectedIndex === foundSentences.length - 1 ? selectedIndex : selectedIndex + 1;
+    dispatch(selectSentence(foundSentences[nextIndex].guid));
   };
 }
 
@@ -376,13 +377,11 @@ function selectPrevSentence() {
   return function (dispatch, getState) {
     var selectedSentenceId = getState().sentences.selectedSentenceId;
     var foundSentences = getState().sentences.foundSentences;
-    var selectedOrder = foundSentences.findIndex(function (sentence) {
+    var selectedIndex = foundSentences.findIndex(function (sentence) {
       return sentence.guid === selectedSentenceId;
     });
-    var nextOrder = selectedOrder === 0 ? selectedOrder : selectedOrder - 1;
-    dispatch(selectSentence(foundSentences.find(function (s) {
-      return s.order === nextOrder;
-    }).guid));
+    var nextIndex = selectedIndex === 0 ? selectedIndex : selectedIndex - 1;
+    dispatch(selectSentence(foundSentences[nextIndex].guid));
   };
 }
 
@@ -8191,4 +8190,4 @@ var Sentences = function () {
 
 /***/ })
 /******/ ]);
-//# sourceMappingURL=main.3fa5d0f2.js.map
+//# sourceMappingURL=main.e3885817.js.map
