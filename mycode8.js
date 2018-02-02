@@ -2705,7 +2705,7 @@ var reducer = Object(__WEBPACK_IMPORTED_MODULE_3_redux__["c" /* combineReducers 
   lastAction: lastAction
 });
 
-var store = Object(__WEBPACK_IMPORTED_MODULE_3_redux__["e" /* createStore */])(reducer, Object(__WEBPACK_IMPORTED_MODULE_3_redux__["d" /* compose */])(Object(__WEBPACK_IMPORTED_MODULE_3_redux__["a" /* applyMiddleware */])(__WEBPACK_IMPORTED_MODULE_4_redux_thunk___default.a), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() /* Developing needs */
+var store = Object(__WEBPACK_IMPORTED_MODULE_3_redux__["e" /* createStore */])(reducer, Object(__WEBPACK_IMPORTED_MODULE_3_redux__["d" /* compose */])(Object(__WEBPACK_IMPORTED_MODULE_3_redux__["a" /* applyMiddleware */])(__WEBPACK_IMPORTED_MODULE_4_redux_thunk___default.a) /* Developing needs */
 ));
 
 var sentencesComponent = new __WEBPACK_IMPORTED_MODULE_9__components_sentences__["a" /* default */](store);
